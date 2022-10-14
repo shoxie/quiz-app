@@ -13,7 +13,7 @@ import {
 import { z } from "zod";
 import { Form, Formik } from "formik";
 import { toFormikValidationSchema } from "zod-formik-adapter";
-import axios from 'axios'
+import axios from "axios";
 
 const validationSchema = z.object({
   name: z.string(),
@@ -29,7 +29,10 @@ type User = {
 
 export default function SignUpPage() {
   function onSubmitHandler(data: User) {
-    axios.post('/api/user/create', data).then(res => console.log(res)).catch(err => console.log(err))
+    axios
+      .post("/api/user/create", data)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   }
 
   return (

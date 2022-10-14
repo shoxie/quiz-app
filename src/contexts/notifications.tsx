@@ -7,28 +7,51 @@ import {
 } from "react";
 import { Notification } from "@/types/global";
 
-enum NotificationTypes { "loading", "info", "error", "complete" }
+enum NotificationTypes {
+  "loading",
+  "info",
+  "error",
+  "complete",
+}
 
-const types = ["loading", "info", "error", "complete"]
+const types = ["loading", "info", "error", "complete"];
 
 type TNotiContext = {
-    notis: Notification[]
-    addNoti: (title: string, content: string, type: string, actionText: string, action: () => void) => void
+  notis: Notification[];
+  addNoti: (
+    title: string,
+    content: string,
+    type: string,
+    actionText: string,
+    action: () => void
+  ) => void;
 };
 
 type Props = {
-    children?: ReactNode;
-  };
+  children?: ReactNode;
+};
 
 const NotificationContext = createContext<TNotiContext>({
-    notis: [],
-    addNoti: (title: string, content: string, type: string, actionText: string, action: () => void) => {}
+  notis: [],
+  addNoti: (
+    title: string,
+    content: string,
+    type: string,
+    actionText: string,
+    action: () => void
+  ) => {},
 });
 
 export function NotificationProvider({ children }: Props) {
   const [notis, setNotis] = useState<Notification[]>([]);
 
-  const addNoti = (title: string, content: string, type: string, actionText: string, action: () => void) => {
+  const addNoti = (
+    title: string,
+    content: string,
+    type: string,
+    actionText: string,
+    action: () => void
+  ) => {
     const newItem = {
       title,
       content,
@@ -37,7 +60,7 @@ export function NotificationProvider({ children }: Props) {
       action,
       actionText,
     };
-    console.log(newItem)
+    console.log(newItem);
     const temp = [...notis, newItem];
     setNotis(temp);
     setTimeout(() => {
@@ -52,7 +75,7 @@ export function NotificationProvider({ children }: Props) {
     <NotificationContext.Provider
       value={{
         notis,
-        addNoti
+        addNoti,
       }}
     >
       {children}
@@ -61,11 +84,11 @@ export function NotificationProvider({ children }: Props) {
 }
 
 export function useNoti() {
-    const data = useContext(NotificationContext);
-  
-    if (!data) {
-      throw new Error("Noti must be provided");
-    }
-  
-    return data;
+  const data = useContext(NotificationContext);
+
+  if (!data) {
+    throw new Error("Noti must be provided");
   }
+
+  return data;
+}

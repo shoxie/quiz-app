@@ -40,15 +40,15 @@ const NotificationItem = (item: Notification) => {
 
   function getColor(type: string) {
     switch (type) {
-        case "success":
-          return "green.400"
-        case "loading":
-          return "blue.400"
-        case "info":
-          return "yellow.400"
-        case "error":
-          return "red.400"
-      }
+      case "success":
+        return "green.400";
+      case "loading":
+        return "blue.400";
+      case "info":
+        return "yellow.400";
+      case "error":
+        return "red.400";
+    }
   }
 
   return (
@@ -72,7 +72,14 @@ const NotificationItem = (item: Notification) => {
       </HStack>
       {item.action && (
         <Box py="1" textAlign="center" bg={getColor(item.type)}>
-          <Button fontWeight="bold" variant="unstyled" textColor="white" onClick={() => item.action()}>{item.actionText}</Button>
+          <Button
+            fontWeight="bold"
+            variant="unstyled"
+            textColor="white"
+            onClick={() => item.action()}
+          >
+            {item.actionText}
+          </Button>
         </Box>
       )}
 

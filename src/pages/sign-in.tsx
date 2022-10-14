@@ -29,14 +29,24 @@ type User = {
 };
 
 export default function SignUpPage() {
-  const router = useRouter()
-  const { addNoti } = useNoti()
+  const router = useRouter();
+  const { addNoti } = useNoti();
 
   async function onSubmitHandler(data: User) {
-    const user = await signIn("credentials", { ...data, callbackUrl: "/", redirect: false})
-    console.log(user)
+    const user = await signIn("credentials", {
+      ...data,
+      callbackUrl: "/",
+      redirect: false,
+    });
+    console.log(user);
     if (user?.status === 200) {
-      addNoti("Signed in", "You will be redirected to homepage", "success", "Redirect now", () => router.push("/"))
+      addNoti(
+        "Signed in",
+        "You will be redirected to homepage",
+        "success",
+        "Redirect now",
+        () => router.push("/")
+      );
     }
   }
 
@@ -83,14 +93,10 @@ export default function SignUpPage() {
                   </FormControl>
 
                   <HStack align="center" justify="center" spacing="10" mt="5">
-                  <Button type="submit">
-                    Login
-                  </Button>
-                  <Button>
-                  <Link href="/sign-up">
-                    Sign up
-                  </Link>
-                  </Button>
+                    <Button type="submit">Login</Button>
+                    <Button>
+                      <Link href="/sign-up">Sign up</Link>
+                    </Button>
                   </HStack>
                 </VStack>
               </Form>

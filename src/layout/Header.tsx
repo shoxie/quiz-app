@@ -25,7 +25,11 @@ export default function Header() {
         <Box>
           <HStack>
             {status === "authenticated" ? (
-              <Button onClick={() => signOut()}><Text>Welcome, <u>{data.user?.name}</u></Text></Button>
+              <Button onClick={() => signOut()}>
+                <Text>
+                  Welcome, <u>{data.user?.name}</u>
+                </Text>
+              </Button>
             ) : (
               <Link href="/sign-in">Sign in</Link>
             )}
