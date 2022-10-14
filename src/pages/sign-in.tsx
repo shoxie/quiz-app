@@ -13,10 +13,10 @@ import {
 import { z } from "zod";
 import { Form, Formik } from "formik";
 import { toFormikValidationSchema } from "zod-formik-adapter";
-import axios from 'axios'
 import { signIn } from "next-auth/react";
 import { useNoti } from "@/contexts/notifications";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const validationSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -82,9 +82,16 @@ export default function SignUpPage() {
                     <FormErrorMessage>{errors.password}</FormErrorMessage>
                   </FormControl>
 
-                  <Button type="submit" mt="5">
-                    go
+                  <HStack align="center" justify="center" spacing="10" mt="5">
+                  <Button type="submit">
+                    Login
                   </Button>
+                  <Button>
+                  <Link href="/sign-up">
+                    Sign up
+                  </Link>
+                  </Button>
+                  </HStack>
                 </VStack>
               </Form>
             )}
