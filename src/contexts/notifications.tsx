@@ -11,17 +11,17 @@ enum NotificationTypes {
   "loading",
   "info",
   "error",
-  "complete",
+  "success",
 }
 
-const types = ["loading", "info", "error", "complete"];
+type NotificationType = keyof typeof NotificationTypes
 
 type TNotiContext = {
   notis: Notification[];
   addNoti: (
     title: string,
     content: string,
-    type: string,
+    type: NotificationType,
     actionText: string,
     action: () => void
   ) => void;
@@ -36,7 +36,7 @@ const NotificationContext = createContext<TNotiContext>({
   addNoti: (
     title: string,
     content: string,
-    type: string,
+    type: NotificationType,
     actionText: string,
     action: () => void
   ) => {},
@@ -48,7 +48,7 @@ export function NotificationProvider({ children }: Props) {
   const addNoti = (
     title: string,
     content: string,
-    type: string,
+    type: NotificationType,
     actionText: string,
     action: () => void
   ) => {

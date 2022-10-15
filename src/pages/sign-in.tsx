@@ -17,6 +17,8 @@ import { signIn } from "next-auth/react";
 import { useNoti } from "@/contexts/notifications";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { useAtom } from "jotai";
+import { headerHeightAtom } from "@/app/states";
 
 const validationSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -31,6 +33,7 @@ type User = {
 export default function SignUpPage() {
   const router = useRouter();
   const { addNoti } = useNoti();
+  const [headerHeight] = useAtom(headerHeightAtom)
 
   async function onSubmitHandler(data: User) {
     const user = await signIn("credentials", {
@@ -38,7 +41,6 @@ export default function SignUpPage() {
       callbackUrl: "/",
       redirect: false,
     });
-    console.log(user);
     if (user?.status === 200) {
       addNoti(
         "Signed in",
@@ -50,12 +52,8 @@ export default function SignUpPage() {
     }
   }
 
-  function pushToHome() {
-    
-  }
-
   return (
-    <Container maxW="xl" height="100vh">
+    <Container maxW="xl" height="100vh" mt={`-${headerHeight}px`}>
       <HStack justify="center" align="center" h="full">
         <Box>
           <Heading textAlign="center" mb="5">

@@ -9,8 +9,24 @@ import {
 } from "@chakra-ui/react";
 import { TbBrandAppleArcade } from "react-icons/tb";
 import Link from "next/link";
+import Router from "next/router";
+import { useEffect } from 'react';
+import { useSession } from "next-auth/react";
+import { useNoti } from "@/contexts/notifications";
+import { PRIVATE_ROUTES } from "@/app/router";
 
 const Home: NextPage = () => {
+  const { status } = useSession()
+  const { addNoti } = useNoti()
+  useEffect(() => {
+    Router.events.on("routeChangeStart", (route: string) => {
+      if (status === "unauthenticated" && PRIVATE_ROUTES.includes(route)) {
+        addNoti("You're not signed in", "Please sign in first before playing.", "error", "Sign in now", () => Router.push("/sign-in"))
+        return false
+      }
+      return true
+    })
+  })
   return (
     <Container maxW={"container.xl"}>
       <Box textAlign={"center"}>
