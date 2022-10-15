@@ -12,13 +12,24 @@ import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { signOut } from "next-auth/react";
+import { useEffect, useRef, useState } from "react";
+import { headerHeightAtom } from "@/app/states";
+import { useAtom } from "jotai";
 
 export default function Header() {
   const { toggleColorMode, colorMode } = useColorMode();
   const { status, data } = useSession();
 
+  const headerContainer = useRef<HTMLDivElement>(null);
+  const [headerHeight, setHeaderHeight] = useAtom(headerHeightAtom)
+
+  useEffect(() => {
+    if (!headerContainer.current) return
+    setHeaderHeight(headerContainer.current?.clientHeight)
+  }, [headerContainer])
+
   return (
-    <Box w="full" position="fixed" py="5">
+    <Box w="full" position="fixed" py="5" ref={headerContainer}>
       <Container
         maxW="container.xl"
         w="full"
@@ -37,7 +48,9 @@ export default function Header() {
       >
         <HStack justify="space-between" width="full">
           <Box>
-            <Heading>English Quiz app</Heading>
+            <Link href="/">
+              <Heading>English Quiz app</Heading>
+            </Link>
           </Box>
           <Box>
             <HStack>

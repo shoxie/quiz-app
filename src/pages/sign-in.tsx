@@ -50,6 +50,10 @@ export default function SignUpPage() {
     }
   }
 
+  function pushToHome() {
+    
+  }
+
   return (
     <Container maxW="xl" height="100vh">
       <HStack justify="center" align="center" h="full">

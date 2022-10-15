@@ -1,0 +1,457 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "category": "Entertainment: Video Games",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "Nintendo started out as a playing card manufacturer.",
+      "correct_answer": "True",
+      "incorrect_answers": ["False"]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "In the 'Halo' franchise, in what country is New Mombasa?",
+      "correct_answer": "Kenya",
+      "incorrect_answers": ["India", "Turkey", "Slovakia"]
+    },
+    {
+      "category": "Entertainment: Cartoon & Animations",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What is Scooby-Doo's real name?",
+      "correct_answer": "Scoobert",
+      "incorrect_answers": ["Scooter", "Scrappy", "Shooby"]
+    },
+    {
+      "category": "Entertainment: Cartoon & Animations",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "In the TV show 'Rick and Morty', Rick uses the catchphrase 'Wubba Lubba Dub Dub', which means what in Birdperson?",
+      "correct_answer": "I am in great pain, please help me.",
+      "incorrect_answers": [
+        "I pray that my life ends soon.",
+        "Lets get this party started!",
+        "I am suffering, please help me."
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which naval battle was considered the turning point of the Pacific Ocean Theater during World War 2?",
+      "correct_answer": "Battle of Midway",
+      "incorrect_answers": [
+        "Attack on Truk Island",
+        "Attack on Pearl Harbor",
+        "Battle of the Coral Sea"
+      ]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What was Marilyn Monroe`s character's first name in the film 'Some Like It Hot'?",
+      "correct_answer": "Sugar",
+      "incorrect_answers": ["Honey", "Caramel", "Candy"]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What is the airspeed velocity of an unladen swallow?",
+      "correct_answer": "24 MPH",
+      "incorrect_answers": ["15 MPH", "20 MPH", "200 MPH"]
+    },
+    {
+      "category": "Geography",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What is the capital of Chile?",
+      "correct_answer": "Santiago",
+      "incorrect_answers": [
+        "Valpara&iacute;so",
+        "Copiap&oacute;",
+        "Antofagasta"
+      ]
+    },
+    {
+      "category": "Entertainment: Comics",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Who is the creator of the comic series 'The Walking Dead'?",
+      "correct_answer": "Robert Kirkman",
+      "incorrect_answers": [
+        "Stan Lee",
+        "Malcolm Wheeler-Nicholson",
+        "Robert Crumb"
+      ]
+    },
+    {
+      "category": "Entertainment: Cartoon & Animations",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which of these is NOT a Disney cartoon character?",
+      "correct_answer": "Daffy Duck",
+      "incorrect_answers": ["Donald Duck", "Daisy Duck", "Scrooge McDuck"]
+    },
+    {
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which of these songs by Skrillex features Fatman Scoop as a side artist?",
+      "correct_answer": "Recess",
+      "incorrect_answers": [
+        "All is Fair in Love and Brostep",
+        "Rock N Roll (Will Take You to the Mountain)",
+        "Scary Monsters and Nice Sprites"
+      ]
+    },
+    {
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Madonna's song 'Hung Up' includes a piece from which popular 70s song?",
+      "correct_answer": "Gimmie! Gimmie! Gimme! (A Man After Midnight)",
+      "incorrect_answers": ["Staying Alive", "Night Fever", "The Chain"]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which eSports team came first place in The International Dota 2 Championship 2016?",
+      "correct_answer": "Wings Gaming",
+      "incorrect_answers": ["Digital Chaos", "Evil Geniuses", "Fnatic"]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which CS:GO eSports team won the major event ESL One Cologne 2016?",
+      "correct_answer": "SK Gaming",
+      "incorrect_answers": ["Team Liquid", "Fnatic", "Virtus.pro"]
+    },
+    {
+      "category": "Celebrities",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which of these people is NOT a part of the Internet comedy group Mega64?",
+      "correct_answer": "Jon Jafari",
+      "incorrect_answers": ["Rocco Botte", "Derrick Acosta", "Shawn Chatfield"]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What two characters from the game Undertale are never in a relationship or not related?",
+      "correct_answer": "Frisk &amp; Chara",
+      "incorrect_answers": [
+        "Sans &amp; Papyrus",
+        "Toriel &amp; Asgore",
+        "Alphys &amp; Undyne"
+      ]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "In the game 'Cave Story,' what is the character Balrog's catchphrase?",
+      "correct_answer": "Huzzah!",
+      "incorrect_answers": ["Yes!", "Whoa there!", "Nyeh heh heh!"]
+    },
+    {
+      "category": "Celebrities",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What was the cause of death for Freddie Mercury?",
+      "correct_answer": "Pneumonia",
+      "incorrect_answers": ["Stomach Cancer", "HIV", "Brain Hemorrhage"]
+    },
+    {
+      "category": "Entertainment: Japanese Anime & Manga",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "The main antagonist of the second part of JoJo's Bizarre Adventure is which of the following?",
+      "correct_answer": "Kars",
+      "incorrect_answers": ["Erina Joestar", "Santana", "Wired Beck"]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "Minecraft can be played with a virtual reality headset.",
+      "correct_answer": "True",
+      "incorrect_answers": ["False"]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "In the 1979 British film 'Quadrophenia' what is the name of the main protagonist?",
+      "correct_answer": "Jimmy Cooper",
+      "incorrect_answers": ["Pete Townshend", "Franc Roddam", "Archie Bunker"]
+    },
+    {
+      "category": "Mythology",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "In Norse mythology, what is the name of the serpent which eats the roots of the ash tree Yggdrasil?",
+      "correct_answer": "Nidhogg",
+      "incorrect_answers": ["Bragi", "Odin", "Ymir"]
+    },
+    {
+      "category": "Celebrities",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What does film maker Dan Bell typically focus his films on?",
+      "correct_answer": "Abandoned Buildings and Dead Malls",
+      "incorrect_answers": [
+        "Historic Landmarks",
+        "Action Films",
+        "Documentaries "
+      ]
+    },
+    {
+      "category": "Science: Mathematics",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What is the alphanumeric representation of the imaginary number?",
+      "correct_answer": "i",
+      "incorrect_answers": ["e", "n", "x"]
+    },
+    {
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What was the title of Sakamoto Kyu's song 'Ue o Muite Arukou' (I Look Up As I Walk) changed to in the United States?",
+      "correct_answer": "Sukiyaki",
+      "incorrect_answers": ["Takoyaki", "Sushi", "Oden"]
+    },
+    {
+      "category": "Entertainment: Japanese Anime & Manga",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What song plays in the ending credits of the anime 'Ergo Proxy'?",
+      "correct_answer": "Paranoid Android",
+      "incorrect_answers": [
+        "Sadistic Summer",
+        "Bittersweet Symphony",
+        "Mad World"
+      ]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In the video game 'Team Fortress 2', which class is able to double jump?",
+      "correct_answer": "Scout",
+      "incorrect_answers": ["Spy", "Engineer", "Pyro"]
+    },
+    {
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which of these bands is the oldest?",
+      "correct_answer": "Pink Floyd",
+      "incorrect_answers": ["AC/DC", "Metallica", "Red Hot Chili Peppers"]
+    },
+    {
+      "category": "Geography",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What is the name of the Canadian national anthem?",
+      "correct_answer": "O Canada",
+      "incorrect_answers": [
+        "O Red Maple",
+        "Leaf-Spangled Banner",
+        "March of the Puck Drop"
+      ]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "What do the video games No Man&rsquo;s Sky and Mighty No. 9 have in common?",
+      "correct_answer": "Both were announced in 2013.",
+      "incorrect_answers": [
+        "Both were crowdfunded.",
+        "Both were developed by indie studios.",
+        "Both were released for the PlayStation 3."
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What is the capital of Belarus?",
+      "correct_answer": "Minsk",
+      "incorrect_answers": ["Warsaw", "Kiev", "Vilnius"]
+    },
+    {
+      "category": "Geography",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "In the 2016 Global Peace Index poll, out of 163 countries, what was the United States of America ranked?",
+      "correct_answer": "103",
+      "incorrect_answers": ["10", "59", "79"]
+    },
+    {
+      "category": "Entertainment: Japanese Anime & Manga",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "The character Momonga from the 'Overlord' series orders his servants to call him by what name?",
+      "correct_answer": "Ainz Ooal Gown",
+      "incorrect_answers": ["Master", "Yggdrasil", "Kugane Maruyama"]
+    },
+    {
+      "category": "Entertainment: Television",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "In 'Star Trek', what is the Klingon death ritual?",
+      "correct_answer": "Look into sky and yell loudly in mourning.",
+      "incorrect_answers": [
+        "Kiss the jagged forehead before burial.",
+        "Shoot into space in a torpedo casing.",
+        "Split the deceased's earnings between bloodkin."
+      ]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "In 'Call Of Duty: Zombies', which map introduced the perk 'PhD Flopper'?",
+      "correct_answer": "Ascension",
+      "incorrect_answers": ["Moon", "Call Of The Dead", "Die Rise"]
+    },
+    {
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Pete Townshend collaborated with which famous guitarist for an event at Brixton Academy in 1985?",
+      "correct_answer": "David Gilmour",
+      "incorrect_answers": ["Jimmy Page", "Mark Knopfler", "Eric Clapton"]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What animal is featured in 'Bloons TD Battles'?",
+      "correct_answer": "Monkeys",
+      "incorrect_answers": ["Alligators", "Pigeons", "Lizards"]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What is the name of the island that 'Jurassic Park' is built on?",
+      "correct_answer": "Isla Nublar",
+      "incorrect_answers": ["Isla Sorna", "Isla Muerta", "Isla Pena"]
+    },
+    {
+      "category": "Entertainment: Japanese Anime & Manga",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "In Chobits, Hideki found Chii in his apartment.",
+      "correct_answer": "False",
+      "incorrect_answers": ["True"]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "Which of the following films was directed by Ivan Reitman, written by Gary Ross, featured Kevin Kline, and was released in 1993?",
+      "correct_answer": "Dave",
+      "incorrect_answers": ["John", "Will", "Carl"]
+    },
+    {
+      "category": "Entertainment: Board Games",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "In what year was the card game Magic: the Gathering first introduced?",
+      "correct_answer": "1993",
+      "incorrect_answers": ["1987", "1998", "2003"]
+    },
+    {
+      "category": "Entertainment: Musicals & Theatres",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "The musical 'Dirty Rotten Scoundrels' is set in what country?",
+      "correct_answer": "France",
+      "incorrect_answers": ["USA", "Germany", "Sweden"]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Earth is located in which galaxy?",
+      "correct_answer": "The Milky Way Galaxy",
+      "incorrect_answers": [
+        "The Mars Galaxy",
+        "The Galaxy Note",
+        "The Black Hole"
+      ]
+    },
+    {
+      "category": "Entertainment: Music",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "What album did Gorillaz release in 2017?",
+      "correct_answer": "Humanz",
+      "incorrect_answers": ["Plastic Beach", "The Fall", "Demon Days"]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "medium",
+      "question": "Which Marvel superhero did Chris Evans play prior to his role as Captain America?",
+      "correct_answer": "Human Torch",
+      "incorrect_answers": ["Cyclops", "Iceman", "Daredevil"]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Who rode on horseback to warn the Minutemen that the British were coming during the U.S. Revolutionary War?",
+      "correct_answer": "Paul Revere",
+      "incorrect_answers": ["Thomas Paine", "Henry Longfellow", "Nathan Hale"]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In Final Fantasy XIV, what is the name of the Deep Dungeon that was introduced in the expansion pack, Heavensward?",
+      "correct_answer": "Palace of the Dead",
+      "incorrect_answers": [
+        "Heaven on High",
+        "Aetherochemical Research Facility",
+        "Sunken Temple of Qarn"
+      ]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "hard",
+      "question": "In the game Enter the Gungeon, which one of these is not a playable character?",
+      "correct_answer": "The Wizard",
+      "incorrect_answers": ["The Bullet", "The Robot", "The Cultist"]
+    },
+    {
+      "category": "General Knowledge",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "The mitochondria is the powerhouse of the cell.",
+      "correct_answer": "True",
+      "incorrect_answers": ["False"]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "In the Resident Evil series, Leon S. Kennedy is a member of STARS.",
+      "correct_answer": "False",
+      "incorrect_answers": ["True"]
+    }
+  ]
+}

@@ -3,6 +3,6 @@ export type Notification = {
   title: string;
   content: string;
   type: "loading" | "info" | "error" | "complete" | string;
-  action: () => void;
+  action: Function;
   actionText?: string;
 };

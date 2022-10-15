@@ -38,6 +38,13 @@ const NotificationItem = (item: Notification) => {
     };
   });
 
+  useEffect(() => {
+    console.log('progress', progress)
+    if (progress + 1 >= 100) {
+      item.action()
+    }
+  }, [progress])
+
   function getColor(type: string) {
     switch (type) {
       case "success":
@@ -66,7 +73,7 @@ const NotificationItem = (item: Notification) => {
           {getIcon(item.type)}
         </HStack>
         <VStack alignItems="start">
-          <Text>{item.id}</Text>
+          <Text>{item.title}</Text>
           <p className="line-clamp-3">{item.content}</p>
         </VStack>
       </HStack>
