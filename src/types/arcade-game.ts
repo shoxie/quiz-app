@@ -7,6 +7,7 @@ export type QuestionProps = {
     incorrect_answers: string[]
     onAnswerSelect: (answer: string) => void
 }
+
 export enum GameStates {"idle", "started", "result"}
 
 export type GameState = keyof typeof GameStates

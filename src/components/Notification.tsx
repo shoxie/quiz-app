@@ -39,7 +39,6 @@ const NotificationItem = (item: Notification) => {
   });
 
   useEffect(() => {
-    console.log('progress', progress)
     if (progress + 1 >= 100) {
       item.action()
     }

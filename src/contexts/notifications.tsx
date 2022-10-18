@@ -60,7 +60,6 @@ export function NotificationProvider({ children }: Props) {
       action,
       actionText,
     };
-    console.log(newItem);
     const temp = [...notis, newItem];
     setNotis(temp);
     setTimeout(() => {
