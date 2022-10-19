@@ -1,13 +1,31 @@
 import { getQuiz } from "@/app/api";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
-import { Box, Button, Container, HStack } from "@chakra-ui/react";
 import { GetServerSideProps } from "next";
 import Question from "@/components/Quizes/Question";
-import { TAnswerSheet, TQuestion } from "@/types/quiz-game";
+import { GameState, TAnswerSheet, TQuestion } from "@/types/quiz-game";
 import { saveHistory } from "@/app/api";
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  Box,
+  Button,
+  Container,
+  HStack,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
+import Link from "next/link";
+import { shuffle } from "@/utils";
+import { useSession } from "next-auth/react";
 
 export default function QuizPanel({ id }: { id: string }) {
+  const { status } = useSession();
   const { isLoading, error, data, isFetching } = useQuery(
     ["getHistory", id],
     async () => await getQuiz(id)
@@ -24,12 +42,13 @@ export default function QuizPanel({ id }: { id: string }) {
   });
   const [activeIndex, setActiveIndex] = useState(0);
   const [answerSheet, setAnswerSheet] = useState<TAnswerSheet[]>([]);
-  const [date, setData] = useState<Date>(new Date())
+  const [gameState, setGameState] = useState<GameState>("started");
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
     console.log("data", data);
     if (!data) return;
-    setQuestions(data.quizes);
+    setQuestions(shuffle(data.quizes));
     setCurrentQuestion(data.quizes[0]);
   }, [data, error]);
 
@@ -51,26 +70,47 @@ export default function QuizPanel({ id }: { id: string }) {
   }
 
   function handleAnswerClick(answer: string) {
-    let temp = [...answerSheet]
-    temp[activeIndex] = {
-        question: currentQuestion,
-        choosen: answer,
-      },
-    setAnswerSheet(temp);
+    let temp = [...answerSheet];
+    (temp[activeIndex] = {
+      question: currentQuestion,
+      choosen: answer,
+    }),
+      setAnswerSheet(temp);
   }
 
-  async function handleFinishGame () {
+  async function handleFinishGame() {
     let totalPoint = 0;
 
-    for(let i =0; i < answerSheet.length; i++) {
-      let item = answerSheet[i]
+    for (let i = 0; i < answerSheet.length; i++) {
+      let item = answerSheet[i];
       if (item.choosen === item.question.correct_answer) {
-        totalPoint = totalPoint + item.question.point
+        totalPoint = totalPoint + item.question.point;
       }
     }
 
-    saveHistory(date, id, totalPoint)
+    saveHistory(new Date(), id, totalPoint);
+    onOpen();
   }
+
+  function getCorrectAnswersLength() {
+    let total = 0;
+
+    for (let i = 0; i < answerSheet.length; i++) {
+      let item = answerSheet[i];
+      if (item.choosen === item.question.correct_answer) total++;
+    }
+    return total;
+  }
+
+  function reDo() {
+    onClose();
+    setAnswerSheet([]);
+    setActiveIndex(0);
+    setQuestions(shuffle(questions));
+  }
+
+  if (status === "unauthenticated")
+    return <Box>You&apos;re not authenticated</Box>;
 
   if (isLoading) return <Box>Loading</Box>;
 
@@ -88,7 +128,7 @@ export default function QuizPanel({ id }: { id: string }) {
           {activeIndex < questions.length - 1 && (
             <Button onClick={() => navigate("next")}>Next</Button>
           )}
-          {activeIndex ===  questions.length - 1 && (
+          {activeIndex === questions.length - 1 && (
             <Button onClick={handleFinishGame}>Finish</Button>
           )}
         </Box>
@@ -103,6 +143,28 @@ export default function QuizPanel({ id }: { id: string }) {
         type={currentQuestion.type}
         onAnswerSelect={(answer: string) => handleAnswerClick(answer)}
       />
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Congrats</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Text fontWeight={"bold"}>You have finished your quiz.</Text>
+            <Text>
+              Result: {getCorrectAnswersLength()}/{questions.length}
+            </Text>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={() => reDo()}>
+              Do it again ?
+            </Button>
+            <Link href="/">
+              <Button variant="ghost">Do another quiz!</Button>
+            </Link>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </Container>
   );
 }

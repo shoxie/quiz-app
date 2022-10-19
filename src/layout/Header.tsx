@@ -49,7 +49,7 @@ export default function Header() {
         <HStack justify="space-between" width="full">
           <Box>
             <Link href="/">
-              <Heading>English Quiz app</Heading>
+              <Heading cursor={"pointer"}>English Quiz app</Heading>
             </Link>
           </Box>
           <Box>

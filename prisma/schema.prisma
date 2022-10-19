@@ -15,6 +15,7 @@ enum QuizType {
   TrueFalse
   MissingCharacter
   FillMissingWord
+  MultipleChoices
 }
 
 model User {

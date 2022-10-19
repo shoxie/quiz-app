@@ -52,12 +52,13 @@ export default function QuizHistoryWrapper() {
               w="full"
               borderBottom="1px"
               borderColor="gray.200"
-              pb="4"
+              py="4"
               boxShadow="none"
               _hover={{
-                boxShadow: "2xl",
+                bgColor: "gray.200"
               }}
               transition="all 200ms ease-in-out"
+              mt={0}
             >
               <Grid templateColumns="repeat(12, 1fr)" gap="10" w="full">
                 <GridItem colSpan={2} w="full">

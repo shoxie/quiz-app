@@ -23,7 +23,7 @@ export default function MyQuizes() {
     <Box>
       <Heading>My Quizes</Heading>
       <Box mt={5}>
-        <HStack>
+        <HStack spacing="5">
           {data.map((item: Quiz, index: number) => (
             <Link key={index} href={`/quiz/${item.id}`} as={`/quiz/${item.id}`}>
               <Box
@@ -40,6 +40,7 @@ export default function MyQuizes() {
                   roundedTop="2xl"
                   src={item.image}
                   width="96"
+                  h="56"
                   alt={item.title}
                 />
                 <Box bgColor="white" p="5" roundedBottom="2xl">

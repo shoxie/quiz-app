@@ -5,6 +5,7 @@ import {
   Heading,
   Text,
   VStack,
+  Center
 } from "@chakra-ui/react";
 import Router from "next/router";
 import { useEffect } from "react";
@@ -36,10 +37,21 @@ const Home: NextPage = () => {
 
   return (
     <Container maxW={"container.xl"}>
-      <VStack spacing={10} align="start">
-      <MyQuizes />
-      <QuizHistoryWrapper />
+      {
+        status === "authenticated" && (
+          <VStack spacing={10} align="start">
+        <MyQuizes />
+        <QuizHistoryWrapper />
       </VStack>
+        )
+      }
+      {
+        status==="unauthenticated" && (
+          <Center h="full">
+            <Text textDecoration="underline">Sign in to get started</Text>
+          </Center>
+        )
+      }
     </Container>
   );
 };

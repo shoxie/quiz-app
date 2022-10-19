@@ -21,3 +21,7 @@ export type TAnswerSheet = {
     question: TQuestion
     choosen: string
 }
+
+enum States { "started", "finished" }
+
+export type GameState = keyof typeof States
