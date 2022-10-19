@@ -1,5 +1,5 @@
 import { getQuizes } from "@/app/api";
-import { Heading, HStack, Box, Image, Text } from "@chakra-ui/react";
+import { Heading, HStack, Box, Image, Text, useColorModeValue } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Quiz } from "@/types/api-response";
@@ -10,6 +10,8 @@ export default function MyQuizes() {
     ["getQuizes"],
     getQuizes
   );
+
+  const boxBgColor = useColorModeValue('white', '#393552')
 
   useEffect(() => {
     console.log(data);
@@ -43,8 +45,8 @@ export default function MyQuizes() {
                   h="56"
                   alt={item.title}
                 />
-                <Box bgColor="white" p="5" roundedBottom="2xl">
-                  <Text>{item.title}</Text>
+                <Box bgColor={boxBgColor} p="5" roundedBottom="2xl">
+                  <Text fontWeight="bold">{item.title}</Text>
                   <Text>
                     {item.category.title} • {item._count.quizes} questions
                   </Text>
