@@ -14,11 +14,14 @@ import { useQuery } from "@tanstack/react-query";
 import { QuizHistory } from "@/types/api-response";
 import { motion } from "framer-motion";
 import moment from "moment";
+import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
+import { getSession } from "next-auth/react";
+import { Session } from "next-auth";
 
-export default function QuizHistoryWrapper() {
+export default function QuizHistoryWrapper({ session }: {session?: Session}) {
   const { isLoading, error, data, isFetching } = useQuery(
-    ["getHistory"],
-    getQuizHistory
+    ["getHistory", session?.user?.id],
+    async () => await getQuizHistory(session?.user?.id ?? "")
   );
 
   useEffect(() => {
@@ -80,4 +83,12 @@ export default function QuizHistoryWrapper() {
       </Box>
     </Box>
   );
+}
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  return {
+    props: {
+      session: await getSession(context)
+    }
+  }
 }

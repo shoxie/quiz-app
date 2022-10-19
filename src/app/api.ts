@@ -7,7 +7,7 @@ export const getQuizes = () =>
     .then((result) => result.data)
     .catch((err) => err);
 
-export const getQuizHistory = () =>
+export const getQuizHistory = (userId: string) =>
   axios
     .get("/api/game/history")
     .then((result) => result.data)

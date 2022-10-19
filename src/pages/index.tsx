@@ -14,6 +14,7 @@ import { useNoti } from "@/contexts/notifications";
 import { PRIVATE_ROUTES } from "@/app/router";
 import MyQuizes from "@/components/Quizes/GameListing";
 import QuizHistoryWrapper from "@/components/Quizes/History";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   const { status } = useSession();
@@ -48,7 +49,9 @@ const Home: NextPage = () => {
       {
         status==="unauthenticated" && (
           <Center h="full">
-            <Text textDecoration="underline">Sign in to get started</Text>
+            <Link href="/sign-in">
+              <Text textDecoration="underline">Sign in to get started</Text>
+            </Link>
           </Center>
         )
       }
