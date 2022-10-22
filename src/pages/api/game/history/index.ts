@@ -31,9 +31,9 @@ async function POST(req: NextApiRequest, res: NextApiResponse) {
     const data = await prisma.gameHistory.create({
       data: {
         isFinished: true,
-        totalPoint,
-        gameId,
-        startDate,
+        totalPoint: totalPoint as any,
+        gameId: gameId  as any,
+        startDate: startDate as any,
       },
     });
     res.status(200).json(data);
