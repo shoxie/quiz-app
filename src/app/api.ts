@@ -9,7 +9,7 @@ export const getQuizes = () =>
 
 export const getQuizHistory = (userId: string) =>
   axios
-    .get("/api/game/history")
+    .get(`/api/game/history/${userId}`)
     .then((result) => result.data)
     .catch((err) => err);
 
@@ -22,7 +22,8 @@ export const getQuiz = (quizId: string): Promise<GameData> =>
 export const saveHistory = (
   startDate: Date,
   gameId: string,
-  totalPoint: number
+  totalPoint: number,
+  userId: string
 ) =>
   axios.post("/api/game/history", {
     startDate,

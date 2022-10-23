@@ -8,6 +8,7 @@ export default async function handler(
 ) {
   if (req.method !== "GET") return;
   const { userId } = req.query;
+  console.log('userId', userId)
   try {
     const data = await prisma.gameHistory.findMany({
       where: {

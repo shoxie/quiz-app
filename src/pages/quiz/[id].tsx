@@ -25,7 +25,7 @@ import { shuffle } from "@/utils";
 import { useSession } from "next-auth/react";
 
 export default function QuizPanel({ id }: { id: string }) {
-  const { status } = useSession();
+  const { status, data: session } = useSession();
   const { isLoading, error, data, isFetching } = useQuery(
     ["getHistory", id],
     async () => await getQuiz(id)
@@ -46,15 +46,10 @@ export default function QuizPanel({ id }: { id: string }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
-    console.log("data", data);
     if (!data) return;
     setQuestions(shuffle(data.quizes));
     setCurrentQuestion(data.quizes[0]);
   }, [data, error]);
-
-  useEffect(() => {
-    console.log("answerSheet", answerSheet);
-  }, [answerSheet]);
 
   function navigate(direction: string) {
     switch (direction) {
@@ -88,7 +83,9 @@ export default function QuizPanel({ id }: { id: string }) {
       }
     }
 
-    saveHistory(new Date(), id, totalPoint);
+    if (!session?.user?.id) return
+
+    saveHistory(new Date(), id, totalPoint, session?.user?.id);
     onOpen();
   }
 

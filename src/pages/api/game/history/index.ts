@@ -26,14 +26,15 @@ async function GET(req: NextApiRequest, res: NextApiResponse) {
 }
 
 async function POST(req: NextApiRequest, res: NextApiResponse) {
-  const { totalPoint, gameId, startDate } = req.body;
+  const { totalPoint, gameId, startDate, userId } = req.body;
   try {
     const data = await prisma.gameHistory.create({
       data: {
         isFinished: true,
-        totalPoint: totalPoint as any,
-        gameId: gameId  as any,
-        startDate: startDate as any,
+        totalPoint: totalPoint as number,
+        gameId: gameId as string,
+        startDate: startDate as string,
+        userId
       },
     });
     res.status(200).json(data);
@@ -48,9 +49,6 @@ export default async function handler(
   res: NextApiResponse
 ) {
   switch (req.method) {
-    case "GET":
-      GET(req, res);
-      break;
     case "POST":
       POST(req, res);
       break;
