@@ -11,13 +11,21 @@ generator zod {
   provider = "prisma-zod-generator"
 }
 
+enum QuizType {
+  TrueFalse
+  MissingCharacter
+  FillMissingWord
+  MultipleChoices
+}
+
 model User {
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  name     String?
-  email    String    @unique
-  password String
-  avatar   String?
-  Ranking  Ranking[]
+  id          String        @id @default(auto()) @map("_id") @db.ObjectId
+  name        String?
+  email       String        @unique
+  password    String
+  avatar      String?
+  Ranking     Ranking[]
+  GameHistory GameHistory[]
 }
 
 model Ranking {
@@ -25,4 +33,42 @@ model Ranking {
   user   User   @relation(fields: [userId], references: [id])
   userId String @db.ObjectId
   points Int    @default(0)
+}
+
+model Quiz {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  answer         String[]
+  correct_answer String
+  question       String
+  type           QuizType
+  point          Int
+  Game           Game?    @relation(fields: [gameId], references: [id])
+  gameId         String?  @db.ObjectId
+}
+
+model Category {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  title String
+  Game  Game[]
+}
+
+model Game {
+  id          String        @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  image       String
+  category    Category      @relation(fields: [categoryId], references: [id])
+  quizes      Quiz[]
+  GameHistory GameHistory[]
+  categoryId  String        @db.ObjectId
+}
+
+model GameHistory {
+  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  startDate  DateTime?
+  isFinished Boolean   @default(false)
+  totalPoint Int
+  game       Game      @relation(fields: [gameId], references: [id])
+  gameId     String    @db.ObjectId
+  user       User      @relation(fields: [userId], references: [id])
+  userId     String    @db.ObjectId
 }

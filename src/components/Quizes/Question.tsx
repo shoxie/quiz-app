@@ -1,4 +1,4 @@
-import { QuestionProps } from "@/types/arcade-game";
+import { QuestionQuizProps } from "@/types/quiz-game";
 import {
   Box,
   Button,
@@ -11,13 +11,13 @@ import { useState, useEffect } from "react";
 import { shuffle } from "@/utils";
 import { motion } from "framer-motion";
 
-export default function Question(props: QuestionProps) {
+export default function Question(props: QuestionQuizProps) {
   const [answers, setAnswers] = useState<string[]>([]);
   const [selected, setSelected] = useState<number | null>(null);
 
   useEffect(() => {
-    if (!props.incorrect_answers || !props.correct_answer) return
-    setAnswers(shuffle([...props.incorrect_answers, props.correct_answer]));
+    if (!props.answer) return
+    setAnswers(shuffle([...props.answer]));
     setSelected(null)
   }, [props.question]);
 
