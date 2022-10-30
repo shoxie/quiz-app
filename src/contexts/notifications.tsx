@@ -63,6 +63,7 @@ export function NotificationProvider({ children }: Props) {
     const temp = [...notis, newItem];
     setNotis(temp);
     setTimeout(() => {
+      action()
       setNotis((prev) => {
         const newArr = prev.filter((item, idx) => item !== newItem);
         return newArr;

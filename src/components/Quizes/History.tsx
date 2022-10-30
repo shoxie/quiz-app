@@ -24,7 +24,7 @@ export default function QuizHistoryWrapper() {
   const [id, setUserId] = useState("");
   const { data: session } = useSession();
   const { isLoading, error, data, isFetching } = useQuery(
-    ["getHistory", id],
+    ["getHistory", id ?? ""],
     async () => await getQuizHistory(id)
   );
 
@@ -43,6 +43,8 @@ export default function QuizHistoryWrapper() {
   if (isLoading) return <Box>Loading</Box>;
 
   if (error) return <Box>{"An error has occurred: " + error}</Box>;
+
+  if (id === "") return  <Box>Loading</Box>;
 
   return (
     <Box w="full">
